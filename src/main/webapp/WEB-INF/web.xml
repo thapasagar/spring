@@ -2,9 +2,20 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>spring-project</display-name>
   
+  <!-- Application Scoped  -->
+  <listener>
+  		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <context-param>
+  		<param-name>contextConfigLocation</param-name>
+  		<param-value>/WEB-INF/spring/applicationContext.xml</param-value>
+  </context-param>
+  
   <servlet>
     <servlet-name>mvc-dispatcher-servlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!-- TO GIVE SPECIFIC FILE NAME AND LOCATION -->
     <init-param>
     	<param-name>contextConfigLocation</param-name>	
 		<param-value>/WEB-INF/spring/mvc-dispatcher-servlet.xml</param-value>
