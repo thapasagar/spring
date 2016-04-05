@@ -25,8 +25,5 @@
 	<!-- Resource Mapping for Static resources-->
 	<mvc:resources location="/resources/" mapping="/resources/**" />
 	
-	<!-- AspectJ -->
-	<aop:aspectj-autoproxy />
-	<bean id="logAspect" class="com.akuma.projectspring.aspects.LoggingAspect" />
 	
 </beans>

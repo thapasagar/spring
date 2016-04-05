@@ -2,9 +2,21 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.2.xsd
-		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
 	
+	<!-- AspectJ -->
+	<aop:aspectj-autoproxy />
+	<bean id="logAspect" class="com.akuma.projectspring.aspects.LoggingAspect" />
+	
+	<context:component-scan base-package="com.akuma.projectspring.dao" />
+	<context:component-scan base-package="com.akuma.projectspring.services" />
 	
 	<!-- H2 Database -->
 	<jdbc:embedded-database id="dataSource" type="H2">
@@ -18,7 +30,8 @@
 		<jdbc:script location="classpath:db/insert-data.sql" />
 	</jdbc:embedded-database> -->
 	
-<!-- 	<bean id="entityManagerFactoryBean"
+	<!-- JPA Config w/ hibernate  -->
+	<bean id="entityManagerFactoryBean"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="packagesToScan" value="com.akuma.projectspring.dao" />
@@ -28,11 +41,13 @@
 				<property name="databasePlatform" value="org.hibernate.dialect.H2Dialect" />
 			</bean>
 		</property>
-	</bean> -->
+	</bean> 
 	
 	<!-- Transaction Manager  -->
-	<!-- <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactoryBean" />
 	</bean>
-	 -->
+	
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+	 
 </beans>

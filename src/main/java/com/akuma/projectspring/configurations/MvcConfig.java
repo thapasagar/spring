@@ -10,13 +10,13 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@EnableWebMvc
+/*@EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = {"com.akuma.projectspring.controllers"})
-@EnableAspectJAutoProxy
+@EnableAspectJAutoProxy*/
 public class MvcConfig extends WebMvcConfigurerAdapter{
 	
-	@Override
+/*	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
 		configurer.enable();
 	}
@@ -33,6 +33,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
 		bean.setSuffix(".jsp");
 		return bean;
 	}
-	
+	*/
 	
 }

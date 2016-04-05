@@ -3,13 +3,13 @@ package com.akuma.projectspring.configurations;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.akuma.projectspring.models.User;
+import com.akuma.projectspring.models.Users;
 
 /**
  * It indicates to the Spring IOC container that this class
  * will hold bean definitions
  */
-@Configuration
+//@Configuration
 public class ApplicationConfig {
 	
 	/**
@@ -18,8 +18,8 @@ public class ApplicationConfig {
 	 * - We use method name or name attribute as bean name
 	 * - We use new operator and constructor to instantiate the bean
 	 */
-	@Bean(name = {"user", "userInfo"})
-	public User user(){
-		return new User();
-	}
+	/*@Bean(name = {"user", "userInfo"})
+	public Users user(){
+		return new Users();
+	}*/
 }

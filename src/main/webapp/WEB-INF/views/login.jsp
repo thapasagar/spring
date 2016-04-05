@@ -53,15 +53,14 @@
                          <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Email</label>
-                                <form:input path="email" cssClass="form-control" id="email"/>
+                                <form:input path="email" cssClass="form-control" id="email" placeholder="Email"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
                         <div class="row control-group">
                             <div class="form-group col-xs-12 floating-label-form-group controls">
                                 <label>Password</label>
-                                <form:input path="password" cssClass="form-control"  id="password" />
-                                <input type="password" class="form-control" placeholder="Password" id="password" required data-validation-required-message="Please enter your name.">
+                                <form:input path="password" cssClass="form-control"  id="password" placeholder="Password"/>
                                 <p class="help-block text-danger"></p>
                             </div>
                         </div>
@@ -69,7 +68,7 @@
                         <div id="success"></div>
                         <div class="row">
                             <div class="form-group col-xs-12">
-                                <button type="submit" class="btn btn-success btn-lg">Register Me</button>
+                                <button type="submit" class="btn btn-success btn-lg">Log Me In</button>
                             </div>
                         </div>
                     </form:form>

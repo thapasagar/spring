@@ -1,9 +1,13 @@
 package com.akuma.projectspring.dao;
 
-import com.akuma.projectspring.models.User;
+import java.util.List;
+
+import com.akuma.projectspring.models.Users;
 
 public interface UserDAO {
 	
-	public User findUserByEmail(String email);
+	public List<Users>  getAllUsers();
+	public Users findUserByEmail(String email);
+	public void createUser(Users user);
 	
 }

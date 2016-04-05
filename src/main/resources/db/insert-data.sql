@@ -73,10 +73,9 @@ VALUES
 ('SID00213','Yukon','YT','CID002');
 
  
-INSERT INTO USERS (USER_ID, USERNAME, EMAIL, LAST_NAME, FIRST_NAME, ROLE)
+INSERT INTO USERS (USER_ID, USERNAME, EMAIL, PASSWORD, LAST_NAME, FIRST_NAME, ROLE)
 VALUES 
-('PM10000001', 'sthapa', 'sthapa@gmail.com', 'Thapa', 'agar', 'ADMIN');
-/*
-("PM10000002", "sthapa123", "sthapa123@gmail.com", "Thapa", "sam", "USER"),
-("PM10000003", "sthapa324", "sthapa324@gmail.com", "Thapa", "jim", "USER");
-*/
+('PM10000001', 'sthapa', 'sthapa@gmail.com', 'wallahabibi', 'Thapa', 'agar', 'ADMIN'),
+('PM10000002', 'sthapa123', 'sthapa123@gmail.com', 'wallahabibi', 'Thapa', 'sam', 'USER'),
+('PM10000003', 'sthapa324', 'sthapa324@gmail.com', 'wallahabibi', 'Thapa', 'jim', 'USER');
+
